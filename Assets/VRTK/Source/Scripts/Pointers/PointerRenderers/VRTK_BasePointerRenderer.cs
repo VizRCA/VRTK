@@ -336,8 +336,12 @@ namespace VRTK
                     {
                         controllerGrabScript.ForceRelease(true);
                     }
-                    controllerGrabScript.controllerAttachPoint = savedAttachPoint;
-                    savedAttachPoint = null;
+
+                    if (savedAttachPoint != null)
+                    {
+                        controllerGrabScript.controllerAttachPoint = savedAttachPoint;
+                        savedAttachPoint = null;
+                    }
                     attachedToInteractorAttachPoint = false;
                     savedBeamLength = 0f;
                 }
